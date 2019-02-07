@@ -1,0 +1,22 @@
+class Solution {
+    func twoSum(_ numbers: [Int], _ target: Int) -> [Int] {
+        var low = 0
+        var high = numbers.count - 1
+        var result = [Int]()
+        while (low < high) {
+            let sum = numbers[low] + numbers[high]
+            if(sum > target) {
+                high = high - 1
+            }
+            else if(sum < target){
+                low += 1
+            }
+            else {
+                result.append(low + 1)
+                result.append(high + 1)
+                break
+            }  
+        }
+        return result
+    }
+}
