@@ -1,0 +1,24 @@
+class Solution {
+     func twoSum(_ nums: [Int], _ target: Int) -> [Int] {
+        var index1: Int = -1
+        var index2: Int = -1
+        if nums.count > 2 {
+        for i in 0...nums.count - 2 {
+            for j in i+1...nums.count - 1 {
+                if nums[i] + nums[j] == target {
+                    index1 = i
+                    index2 = j
+                    break;
+                }
+            }
+        }
+        } else {
+            if nums[0] + nums[1] == target {
+                index1 = 0
+                index2 = 1
+            }
+        }
+        return [index1, index2]
+    }
+
+}
